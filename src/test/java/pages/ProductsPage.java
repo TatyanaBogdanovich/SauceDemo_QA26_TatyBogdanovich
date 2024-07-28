@@ -31,7 +31,7 @@ public class ProductsPage extends BasePage {
         public String getNameOfButtonRemoveProduct (String productName) {
             return this.getProductCardByName(productName).findElement(REMOVE_TO_CART_BUTTON).getText();
         }
-        public void clickYourCart() {
+        public void clickShoppingCart() {
             driver.findElement(SHOPPING_CART).click();
         }
         private WebElement getProductCardByName(String productName) {

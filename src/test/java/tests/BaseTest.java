@@ -13,7 +13,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected ProductsPage productsPage;
     protected YourCartPage yourCartPage;
-    protected CheckoutInfoPage checkoutInfo;
+    protected CheckoutInfoPage checkoutInfoPage;
     protected CheckoutOverviewPage checkoutOverviewPage;
 
     @BeforeMethod(alwaysRun = true)
@@ -26,7 +26,7 @@ public class BaseTest {
         this.loginPage = new LoginPage(driver);
         this.productsPage = new ProductsPage(driver);
         this.yourCartPage = new YourCartPage(driver);
-        this.checkoutInfo = new CheckoutInfoPage(driver);
+        this.checkoutInfoPage = new CheckoutInfoPage(driver);
         this.checkoutOverviewPage = new CheckoutOverviewPage(driver);
         loginPage.open();
     }

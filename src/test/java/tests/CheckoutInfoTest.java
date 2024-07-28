@@ -11,12 +11,12 @@ public class CheckoutInfoTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.clickAddToCartButton(productNameFirst);
         productsPage.clickAddToCartButton(productNameSecond);
-        productsPage.clickYourCart();
+        productsPage.clickShoppingCart();
         yourCartPage.clickCheckout();
-        Assert.assertTrue(checkoutInfo.isFirstNameDisplayed());
-        Assert.assertTrue(checkoutInfo.isLastNameDisplayed());
-        Assert.assertTrue(checkoutInfo.isZipCodeDisplayed());
-        checkoutInfo.setYourInformation("Jon", "Doe", "94043");
+        Assert.assertTrue(checkoutInfoPage.isFirstNameDisplayed());
+        Assert.assertTrue(checkoutInfoPage.isLastNameDisplayed());
+        Assert.assertTrue(checkoutInfoPage.isZipCodeDisplayed());
+        checkoutInfoPage.setYourInformation("Jon", "Doe", "94043");
         Assert.assertEquals(checkoutOverviewPage.getPageTitle(), "Checkout: Overview");
     }
 }
