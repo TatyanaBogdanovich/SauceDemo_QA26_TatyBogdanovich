@@ -4,8 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class YourCartTest extends BaseTest {
-    @Test
-    public void yourCardTest ()  {
+
+    @Test (groups = {"need account", "smoke"}, description = "Проверка  товара добавленного в корзину")
+
+    public void yourCardTest() {
 
         loginPage.login("standard_user", "secret_sauce");
         String productName = "Sauce Labs Backpack";
