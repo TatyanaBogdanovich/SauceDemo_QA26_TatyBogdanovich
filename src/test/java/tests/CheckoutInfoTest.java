@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 public class CheckoutInfoTest extends BaseTest {
 
-    @Test (groups = {"regression"}, description = "Добавление информации о пользователе")
+    @Test(groups = {"regression"}, description = "Добавление информации о пользователе")
 
-    public void checkoutInfoTest ()  {
+    public void checkoutInfoTest() {
         String productNameFirst = "Sauce Labs Onesie";
         String productNameSecond = "Sauce Labs Backpack";
         loginPage.login("standard_user", "secret_sauce");

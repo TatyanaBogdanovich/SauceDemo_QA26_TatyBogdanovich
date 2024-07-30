@@ -8,22 +8,37 @@ public class LoginPage extends BasePage {
     private static final By EMAIL_INPUT = By.id("user-name");
     private static final By PASSWORD_INPUT = By.id("password");
     private static final By LOGIN_BUTTON = By.id("login-button");
+    private static final By ERROR_MESSAGE = By.cssSelector("h3[data-test=error]");
+
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    public void open () {
+
+    public void open() {
         driver.get("https://www.saucedemo.com/");
     }
+
     public void setEmailValue(String email) {
         driver.findElement(EMAIL_INPUT).sendKeys(email);
     }
+
     public void setPasswordValue(String password) {
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
     }
+
     public void clickLoginButton() {
         driver.findElement(LOGIN_BUTTON).click();
     }
+
+    public boolean isDisplayMessageError() {
+        return driver.findElement(ERROR_MESSAGE).isDisplayed();
+    }
+
+    public String getErrorText() {
+        return driver.findElement(ERROR_MESSAGE).getText();
+    }
+
     public void login(String email, String password) {
         setEmailValue(email);
         setPasswordValue(password);

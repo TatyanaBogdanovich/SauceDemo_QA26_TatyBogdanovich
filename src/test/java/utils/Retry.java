@@ -8,8 +8,7 @@ public class Retry implements IRetryAnalyzer {
     private static final int MAX_RETRY = 3;
 
     @Override
-    public boolean retry(ITestResult iTestResult)
-    {
+    public boolean retry(ITestResult iTestResult) {
         if (!iTestResult.isSuccess()) {
             if (attempt < MAX_RETRY) {
                 attempt++;

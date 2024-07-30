@@ -12,30 +12,38 @@ public class CheckoutInfoPage extends BasePage {
     public CheckoutInfoPage(WebDriver driver) {
         super(driver);
     }
+
     public void setFirstNameValue(String firstNameValue) {
         driver.findElement(FIRST_NAME).sendKeys(firstNameValue);
     }
+
     public void setLastNameValue(String lastNameValue) {
         driver.findElement(LAST_NAME).sendKeys(lastNameValue);
     }
+
     public void setZipCodeValue(String zipCodeValue) {
         driver.findElement(ZIP_POSTAL_CODE).sendKeys(zipCodeValue);
     }
+
     public void clickContinueButton() {
         driver.findElement(CONTINUE_BUTTON).click();
     }
+
     public void setYourInformation(String firstNameValue, String lastNameValue, String zipCodeValue) {
         setFirstNameValue(firstNameValue);
         setLastNameValue(lastNameValue);
         setZipCodeValue(zipCodeValue);
         clickContinueButton();
     }
+
     public boolean isFirstNameDisplayed() {
         return driver.findElement(FIRST_NAME).isDisplayed();
     }
+
     public boolean isLastNameDisplayed() {
         return driver.findElement(LAST_NAME).isDisplayed();
     }
+
     public boolean isZipCodeDisplayed() {
         return driver.findElement(ZIP_POSTAL_CODE).isDisplayed();
     }

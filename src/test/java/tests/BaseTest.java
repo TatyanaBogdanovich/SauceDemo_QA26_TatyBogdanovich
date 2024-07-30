@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import pages.*;
 import utils.TestListener;
@@ -9,7 +10,7 @@ import utils.TestListener;
 import java.time.Duration;
 
 @Listeners({TestListener.class})
-public class BaseTest {
+public abstract class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected ProductsPage productsPage;
@@ -18,9 +19,16 @@ public class BaseTest {
     protected CheckoutOverviewPage checkoutOverviewPage;
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp()
-    {
-        this.driver = new ChromeDriver();
+    public void setUp() {
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-notifications");
+
+        driver = new ChromeDriver(options);
+        //this.driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.saucedemo.com/");
@@ -32,8 +40,9 @@ public class BaseTest {
         loginPage.open();
     }
 
+
     @AfterMethod(alwaysRun = true)
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
