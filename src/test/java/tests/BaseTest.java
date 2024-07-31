@@ -4,11 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.*;
 import utils.DriverFactory;
+import utils.InvokedListener;
 import utils.TestListener;
 
 import java.time.Duration;
 
-@Listeners({TestListener.class})
+@Listeners({TestListener.class, InvokedListener.class})
 public abstract class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
