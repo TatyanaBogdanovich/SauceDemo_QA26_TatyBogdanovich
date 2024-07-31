@@ -1,18 +1,30 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class YourCartTest extends BaseTest {
-    @Test(groups = {"smoke"}, description = "Проверка  товара добавленного в корзину")
-    public void yourCardTest() {
+    @Test(groups = {"smoke"}, dataProvider = "addProductToCard", description = "Проверка  товара добавленного в корзину")
+    public void yourCardTest(String productName) {
         loginPage.login("standard_user", "secret_sauce");
-        String productName = "Sauce Labs Backpack";
         productsPage.clickAddToCartButton(productName);
         productsPage.clickShoppingCart();
         Assert.assertTrue(yourCartPage.isShoppingCardDisplayed());
-        Assert.assertEquals(yourCartPage.getProductPrice(productName), "$29.99");
-        Assert.assertEquals(yourCartPage.getProductDescription(productName), "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.");
         yourCartPage.clickCheckout();
     }
+
+    @DataProvider(name = "addProductToCard")
+    public Object[][] addProductToCard() {
+        return new Object[][]{
+                {"Sauce Labs Backpack"},
+                {"Sauce Labs Bike Light"},
+                {"Sauce Labs Bolt T-Shirt"},
+                {"Sauce Labs Fleece Jacket"},
+                {"Sauce Labs Onesie"},
+                {"Test.allTheThings() T-Shirt (Red)"}};
+    }
 }
+

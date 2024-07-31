@@ -8,18 +8,11 @@
             </run>
         </groups>
         <classes>
+            <class name="tests.CheckoutInfoTest"/>
             <class name="tests.CheckoutOverviewTest"/>
             <class name="tests.ProductsTest"/>
         </classes>
     </test>
-    <test name="Test2">
-        <groups>
-            <run>
-                <include name="regression"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="tests.CheckoutOverviewTest"/>
-        </classes>
-    </test>
 </suite>
+
+

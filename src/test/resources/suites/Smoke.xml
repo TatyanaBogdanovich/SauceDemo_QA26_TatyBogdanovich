@@ -18,4 +18,20 @@
             <class name="tests.YourCartTest"/>
         </classes>
     </test>
+    <test name="Test on Microsoft Edge">
+        <parameter name="browserName" value="edge"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests">
+            </package>
+        </packages>
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.YourCartTest"/>
+        </classes>
+    </test>
    </suite>

@@ -8,6 +8,7 @@ public class CheckoutInfoPage extends BasePage {
     private static final By LAST_NAME = By.id("last-name");
     private static final By ZIP_POSTAL_CODE = By.id("postal-code");
     private static final By CONTINUE_BUTTON = By.id("continue");
+    private static final By CONTINUE_OPEN_PAGE = By.className("page_wrapper");
 
     public CheckoutInfoPage(WebDriver driver) {
         super(driver);
@@ -28,7 +29,10 @@ public class CheckoutInfoPage extends BasePage {
     public void clickContinueButton() {
         driver.findElement(CONTINUE_BUTTON).click();
     }
-
+//    public boolean getOpenCheckoutInfoPage() {
+//        driver.findElement(CONTINUE_OPEN_PAGE).getText();
+//        return false;
+//    }
     public void setYourInformation(String firstNameValue, String lastNameValue, String zipCodeValue) {
         setFirstNameValue(firstNameValue);
         setLastNameValue(lastNameValue);
