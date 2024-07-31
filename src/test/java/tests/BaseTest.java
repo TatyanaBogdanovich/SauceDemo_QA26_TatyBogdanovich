@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 import pages.*;
 import utils.DriverFactory;
@@ -20,9 +21,9 @@ public abstract class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browserName"})
-    public void setUp(@Optional("chrome") String browser) throws Exception {
+    public void setUp(@Optional("chrome") String browser, ITestContext testContext) throws Exception {
         driver = DriverFactory.getDriver(browser);
-
+        testContext.setAttribute("driver", driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.saucedemo.com/");
