@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(productsPage.isShoppingCardDisplayed());
     }
 
-    @Test(groups = {"smoke"}, dataProvider = "negativeLoginTest", description = "Негативный тест на авторизацию и проверка сообщения об ошибке")
+    @Test(groups = {"smoke,regression"}, dataProvider = "negativeLoginTest", description = "Негативный тест на авторизацию и проверка сообщения об ошибке")
     public void negativeLoginTest(String email, String password, String errorMessage) {
         loginPage.login(email, password);
         Assert.assertTrue(loginPage.isDisplayMessageError());
