@@ -9,10 +9,10 @@ public class LoginTest extends BaseTest {
     @Test(groups = "smoke", description = "Успешная авторизация в приложении")
     public void positiveLoginTest() {
         loginPage.login("standard_user", "secret_sauce");
-        Assert.assertTrue(productsPage.isShoppingCardDisplayed());
+        Assert.assertFalse(productsPage.isShoppingCardDisplayed());
     }
 
-    @Test(groups = {"smoke,regression"}, dataProvider = "negativeLoginTest", description = "Негативный тест на авторизацию и проверка сообщения об ошибке")
+    @Test(groups = {"smoke"}, dataProvider = "negativeLoginTest", description = "Негативный тест на авторизацию и проверка сообщения об ошибке")
     public void negativeLoginTest(String email, String password, String errorMessage) {
         loginPage.login(email, password);
         Assert.assertTrue(loginPage.isDisplayMessageError());

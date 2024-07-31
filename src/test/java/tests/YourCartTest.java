@@ -4,8 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
-
 public class YourCartTest extends BaseTest {
     @Test(groups = {"smoke"}, dataProvider = "addProductToCard", description = "Проверка  товара добавленного в корзину")
     public void yourCardTest(String productName) {

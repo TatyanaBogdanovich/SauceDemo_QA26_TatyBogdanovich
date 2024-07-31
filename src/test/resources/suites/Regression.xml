@@ -8,6 +8,7 @@
             </run>
         </groups>
         <classes>
+            <class name="tests.LoginTest"/>
             <class name="tests.CheckoutInfoTest"/>
             <class name="tests.CheckoutOverviewTest"/>
             <class name="tests.ProductsTest"/>
