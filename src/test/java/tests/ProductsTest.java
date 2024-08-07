@@ -4,17 +4,20 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Retry;
 
+import static pages.ProductsPage.*;
+import static pages.ProductsPage.DESCRIPTION_PRODUCT;
+
 public class ProductsTest extends BaseTest {
 
     @Test(groups = {"regression"}, description = "Добавление товара в корзину", retryAnalyzer = Retry.class)
     public void AddToCartButton() {
         String productName = "Sauce Labs Onesie";
-        loginPage.login("standard_user", "secret_sauce");
-        Assert.assertEquals(productsPage.getProductPrice(productName), "$7.99");
-        Assert.assertEquals(productsPage.getProductDescription(productName), "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.");
+        loginPage.login(LOGIN, PASSWORD);
+        Assert.assertEquals(productsPage.getProductPrice(productName), PRICE_PRODUCT);
+        Assert.assertEquals(productsPage.getProductDescription(productName), DESCRIPTION_PRODUCT);
         productsPage.clickAddToCartButton(productName);
         productsPage.clickShoppingCart();
-        Assert.assertEquals(yourCartPage.getProductDescription(productName), "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.");
+        Assert.assertEquals(yourCartPage.getProductDescription(productName), DESCRIPTION_PRODUCT);
     }
 }
 

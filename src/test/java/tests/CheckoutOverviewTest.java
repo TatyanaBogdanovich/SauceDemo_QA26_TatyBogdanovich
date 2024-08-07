@@ -18,8 +18,6 @@ public class CheckoutOverviewTest extends BaseTest {
         checkoutInfoPage.setYourInformation("Jon", "Doe", "94043");
         checkoutOverviewPage.getTotalAmount();
         checkoutOverviewPage.clickFinishButton();
-
-        CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
         Assert.assertEquals(checkoutCompletePage.getCheckoutComplete(), "Checkout: Complete!");
     }
 }

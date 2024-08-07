@@ -29,10 +29,7 @@ public class CheckoutInfoPage extends BasePage {
     public void clickContinueButton() {
         driver.findElement(CONTINUE_BUTTON).click();
     }
-//    public boolean getOpenCheckoutInfoPage() {
-//        driver.findElement(CONTINUE_OPEN_PAGE).getText();
-//        return false;
-//    }
+
     public void setYourInformation(String firstNameValue, String lastNameValue, String zipCodeValue) {
         setFirstNameValue(firstNameValue);
         setLastNameValue(lastNameValue);

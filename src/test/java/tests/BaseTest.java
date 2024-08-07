@@ -18,6 +18,7 @@ public abstract class BaseTest {
     protected YourCartPage yourCartPage;
     protected CheckoutInfoPage checkoutInfoPage;
     protected CheckoutOverviewPage checkoutOverviewPage;
+    protected CheckoutCompletePage checkoutCompletePage;
 
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browserName"})
@@ -32,7 +33,7 @@ public abstract class BaseTest {
         this.yourCartPage = new YourCartPage(driver);
         this.checkoutInfoPage = new CheckoutInfoPage(driver);
         this.checkoutOverviewPage = new CheckoutOverviewPage(driver);
-        loginPage.open();
+        this.checkoutCompletePage = new CheckoutCompletePage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
