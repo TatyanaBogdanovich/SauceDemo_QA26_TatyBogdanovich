@@ -20,6 +20,9 @@ public abstract class BaseTest {
     protected CheckoutOverviewPage checkoutOverviewPage;
     protected CheckoutCompletePage checkoutCompletePage;
 
+    public final static String LOGIN = "standard_user";
+    public final static String PASSWORD = "secret_sauce";
+
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browserName"})
     public void setUp(@Optional("chrome") String browser, ITestContext testContext) throws Exception {

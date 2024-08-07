@@ -13,11 +13,6 @@ public class ProductsPage extends BasePage {
     private final static By ITEM_PRICE = By.className("inventory_item_price");
     private final static By ITEM_DESCRIPTION = By.className("inventory_item_desc");
 
-    public final static String DESCRIPTION_PRODUCT = "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.";
-    public final static String LOGIN = "standard_user";
-    public final static String PASSWORD = "secret_sauce";
-    public final static String PRICE_PRODUCT = "$7.99";
-
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
